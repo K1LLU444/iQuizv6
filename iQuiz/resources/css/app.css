@@ -1,0 +1,19 @@
+@import './node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('/fonts/satoshi/Satoshi-Regular.woff2') format('woff2'),
+         url('/fonts/satoshi/Satoshi-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Satoshi', sans-serif;
+  }
+  
