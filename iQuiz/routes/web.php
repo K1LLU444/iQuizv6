@@ -36,6 +36,7 @@ Route::get('/history', function () {
 })->name('history');
 
 Route::get('/category/join', [CardController::class, 'showCards'])->name('category.join');
+Route::get('/category/available-exams', [CardController::class, 'showCards'])->name('category.available-exams');
 
 
 require __DIR__.'/auth.php';

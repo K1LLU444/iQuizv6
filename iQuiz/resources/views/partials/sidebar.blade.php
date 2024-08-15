@@ -42,7 +42,6 @@
         </nav>
     </div>
 
-    <!-- Fixed logout button, correctly aligned to the sidebar width -->
     <div class="w-64 bg-custombg-gray text-custom-gray py-4 shadow-md fixed bottom-0 left-4">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
