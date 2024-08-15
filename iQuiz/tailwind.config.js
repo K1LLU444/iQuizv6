@@ -21,7 +21,8 @@ export default {
             colors: {
                 'custom-gray': 'rgb(222, 228, 238)',
                 'custombg-gray' : '#1C2434',
-                'sidebar-menu' : '#8A99AF', 
+                'sidebar-menu' : '#8A99AF',
+                'button-bg' : '#3E4DB5' 
             },
             width: {
                 'custom-sidebar-width' : '290px',

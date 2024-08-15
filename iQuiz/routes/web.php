@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CardController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,23 +26,16 @@ Route::get('/profile', function () {
     return view('profile/profile');
 })->name('profile');
 
-// Route::prefix('category')->group(function () {
-//     Route::view('/', 'category');
-//     Route::view('/join', 'category/join')->name('category.join');
-//     Route::view('/available-exams', 'category/available-exams')->name('category.available-exams');
-// });
-Route::get('/category/join', function () {
-    return view('category/join');
-})->name('category.join');
-
-Route::get('/category/available-exams', function () {
-    return view('category/available-exams');
-})->name('category.available-exams');
+Route::prefix('category')->group(function () {
+    Route::view('/join', 'category/join')->name('category.join');
+    Route::view('/available-exams', 'category/available-exams')->name('category.available-exams');
+});
 
 Route::get('/history', function () {
     return view('history/history');
 })->name('history');
 
+Route::get('/category/join', [CardController::class, 'showCards'])->name('category.join');
 
 
 require __DIR__.'/auth.php';
