@@ -33,6 +33,8 @@ Route::get('/history', function () {
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/admin/users', [AdminController::class, 'users'])->name('admin.users');
 Route::get('/admin/settings', [AdminController::class, 'settings'])->name('admin.settings');
+Route::get('/admin/all-category', [AdminController::class, 'allCategory'])->name('admin.all-category');
+
 
 Route::get('/admin/add-category', function () {
     return view('admin.add-category');

@@ -20,4 +20,9 @@ class AdminController extends Controller
     {
         return view('admin.settings'); 
     }
+
+    public function allCategory()
+    {
+        return view('admin.all-category');
+    }
 }
