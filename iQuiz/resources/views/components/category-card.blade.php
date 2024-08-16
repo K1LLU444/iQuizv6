@@ -1,4 +1,4 @@
-<div class="category-card relative bg-white p-6 rounded-lg shadow-lg">
+<div class="category-card relative bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 duration-300">
     <a href="{{ $url }}">
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-[#261212]">
             {{ $title }}
