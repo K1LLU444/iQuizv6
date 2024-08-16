@@ -41,7 +41,10 @@ class CardController extends Controller
             return view('category._cards', compact('cards'))->render();
         }
 
-        return view('category.available-exams', compact('cards'));
+        return view('category.available-exams', [
+            'cards' => $cards,
+            'headerTitle' => 'Available Exams' // Pass the header title here
+        ]);
     }
 
     public function showJoinExams(Request $request)
@@ -79,6 +82,9 @@ class CardController extends Controller
             return view('category._cards', compact('cards'))->render();
         }
 
-        return view('category.join', compact('cards'));
+        return view('category.join', [
+            'cards' => $cards,
+            'headerTitle' => 'Join an Exam' // Pass the header title here
+        ]);
     }
 }

@@ -15,7 +15,8 @@
 
         <div class="flex-1">
             <!-- Header -->
-            @include('partials.header')
+            @include('partials.header', ['headerTitle' => $headerTitle ?? 'Default Title']) <!-- Pass headerTitle to the header partial -->
+
 
             <!-- Main content -->
             <main class="p-6">
