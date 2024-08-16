@@ -40,4 +40,13 @@ Route::get('/admin/add-category', function () {
     return view('admin.add-category');
 })->name('admin.add-category');
 
+Route::get('/admin/add-trainer', function () {
+    return view('admin.add-trainer');
+})->name('admin.add-trainer');
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->name('admin.dashboard');
+
+
 require __DIR__.'/auth.php';

@@ -8,7 +8,7 @@
             <h3 class="mb-6 text-sm font-medium text-sidebar-menu">MENU</h3>
             <ul>
                 <li class="py-2">
-                    <a href="{{route('dashboard')}}" class="block rounded p-2 space-x-2 hover:bg-gray-700 ease-in-out duration-200">
+                    <a href="{{route('admin.dashboard')}}" class="block rounded p-2 space-x-2 hover:bg-gray-700 ease-in-out duration-200">
                         <i class="fa-solid fa-calendar-days"></i>
                         <span>Dashboard</span>
                     </a>
@@ -30,14 +30,15 @@
                 <li x-data="{ open: false }" class="py-2">
                     <a href="#" @click="open = !open" class="block rounded flex items-center space-x-2 hover:bg-gray-700 p-2 ease-in-out duration-200">
                         <i class="fa-solid fa-gauge"></i>
-                        <span>Title</span>
+                        <span>Manage Users</span>
                         <svg x-bind:class="{ 'rotate-180': open }" class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-left:auto">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </a>
                     <div x-show="open" class="ml-4 my-4 space-y-2" x-cloak>
-                        <a href="{{route('category.join')}}" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-gray-700 rounded ease-in-out duration-200">View all trainers</a>
-                        <a href="{{route('category.available-exams')}}" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-gray-700 rounded ease-in-out duration-200">View all students</a>
+                        <a href="{{route('admin.add-trainer')}}" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-gray-700 rounded ease-in-out duration-200">Add a trainer</a>
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-gray-700 rounded ease-in-out duration-200">View all trainers</a>
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-gray-700 rounded ease-in-out duration-200">View all students</a>
                     </div>
                 </li>
             </ul>
