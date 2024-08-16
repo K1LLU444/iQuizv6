@@ -5,7 +5,7 @@
         </h5>
     </a>
     <hr class="my-4 border-gray-300">
-    <p class="mb-10 font-normal text-[#261212]">
+    <p class="mb-24 font-normal text-[#261212]">
         {{ $description }}
     </p>
     <div class="absolute bottom-4 right-4">
@@ -15,5 +15,10 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
             </svg>
         </a>
+    </div>
+    <div class="absolute bottom-4 left-6 space-y-2 text-sm font-medium text-[#261212]">
+        <p><strong>Passing Score:</strong> {{ $passingScore ?? 'N/A' }}</p>
+        <p><strong>No. of Items:</strong> {{ $numItems ?? 'N/A' }}</p>
+        <p><strong>Time Limit:</strong> {{ $timeLimit ?? 'N/A' }}</p>
     </div>
 </div>

@@ -4,20 +4,19 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CardController;
 
+// Default route
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
+// Auth routes
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Dashboard and profile routes
 Route::get('/dashboard', function () {
     return view('dashboard/dashboard');
 })->name('dashboard');
@@ -26,17 +25,18 @@ Route::get('/profile', function () {
     return view('profile/profile');
 })->name('profile');
 
-Route::prefix('category')->group(function () {
-    Route::view('/join', 'category/join')->name('category.join');
-    Route::view('/available-exams', 'category/available-exams')->name('category.available-exams');
-});
 
+
+// Route for available exams
+Route::get('/category/available-exams', [CardController::class, 'showAvailableExams'])->name('category.available-exams');
+
+// Route for join exams
+Route::get('/category/join', [CardController::class, 'showJoinExams'])->name('category.join');
+
+
+// History route
 Route::get('/history', function () {
     return view('history/history');
 })->name('history');
-
-Route::get('/category/join', [CardController::class, 'showCards'])->name('category.join');
-Route::get('/category/available-exams', [CardController::class, 'showCards'])->name('category.available-exams');
-
 
 require __DIR__.'/auth.php';

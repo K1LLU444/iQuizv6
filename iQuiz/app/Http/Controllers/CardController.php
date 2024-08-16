@@ -6,15 +6,66 @@ use Illuminate\Http\Request;
 
 class CardController extends Controller
 {
-    public function showCards(Request $request)
+    public function showAvailableExams(Request $request)
     {
         $query = $request->input('query');
         $cards = [
-            (object) ['title' => 'ITILv4 Foundation', 'description' => 'This certification introduces you to the ITIL framework, focusing on key concepts of IT Service Management (ITSM) and the Service Value System (SVS). Ideal for those seeking to improve IT services and align them with business objectives.', 'url' => '#', 'buttonText' => 'Learn More'],
-            (object) ['title' => 'AWS Cloud Practitioner', 'description' => "This entry-level certification covers fundamental AWS Cloud concepts and services. It's perfect for those wanting a basic understanding of AWS, including its use cases, billing, and cloud principles.", 'url' => '#', 'buttonText' => 'Learn More'],
-            (object) ['title' => 'MS Azure Fundamentals', 'description' => "This exam provides an overview of Microsoft Azure's cloud services, including core concepts, pricing, and support. It's designed for beginners looking to understand Azure's foundational elements and cloud computing principles.", 'url' => '#', 'buttonText' => 'Learn More'],
-            (object) ['title' => 'MS Azure Administrator', 'description' => "Focused on managing Azure environments, this certification tests your skills in configuring virtual networks, managing resources, and implementing storage solutions. It’s for those who handle Azure infrastructure and operations.", 'url' => '#', 'buttonText' => 'Learn More'],
-            
+            (object) [
+                'title' => 'ITILv4 Foundation',
+                'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vero, sit numquam fugit repellat laudantium similique ab temporibus eum ea necessitatibus odit autem accusantium ullam? Expedita architecto alias ut nobis!',
+                'url' => '#',
+                'buttonText' => 'Join Exam',
+                'passingScore' => '65%',
+                'numItems' => 40,
+                'timeLimit' => '60 minutes'
+            ],
+            (object) [
+                'title' => 'AWS Cloud Practitioner',
+                'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vero, sit numquam fugit repellat laudantium similique ab temporibus eum ea necessitatibus odit autem accusantium ullam? Expedita architecto alias ut nobis!',
+                'url' => '#',
+                'buttonText' => 'Join Exam',
+                'passingScore' => '70%',
+                'numItems' => 60,
+                'timeLimit' => '90 minutes'
+            ],
+            // Add more cards as needed
+        ];
+
+        if ($query) {
+            $cards = array_filter($cards, function($card) use ($query) {
+                return stripos($card->title, $query) !== false || stripos($card->description, $query) !== false;
+            });
+        }
+
+        if ($request->ajax()) {
+            return view('category._cards', compact('cards'))->render();
+        }
+
+        return view('category.available-exams', compact('cards'));
+    }
+
+    public function showJoinExams(Request $request)
+    {
+        $query = $request->input('query');
+        $cards = [
+            (object) [
+                'title' => 'MS Azure Fundamentals',
+                'description' => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vero, sit numquam fugit repellat laudantium similique ab temporibus eum ea necessitatibus odit autem accusantium ullam? Expedita architecto alias ut nobis!",
+                'url' => '#',
+                'buttonText' => 'Get Started',
+                'passingScore' => '60%',
+                'numItems' => 50,
+                'timeLimit' => '75 minutes'
+            ],
+            (object) [
+                'title' => 'MS Azure Administrator',
+                'description' => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vero, sit numquam fugit repellat laudantium similique ab temporibus eum ea necessitatibus odit autem accusantium ullam? Expedita architecto alias ut nobis!",
+                'url' => '#',
+                'buttonText' => 'Get Started',
+                'passingScore' => '75%',
+                'numItems' => 70,
+                'timeLimit' => '120 minutes'
+            ],
             // Add more cards as needed
         ];
 
