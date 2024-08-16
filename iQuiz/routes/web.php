@@ -44,6 +44,10 @@ Route::get('/admin/add-trainer', function () {
     return view('admin.add-trainer');
 })->name('admin.add-trainer');
 
+Route::get('/admin/all-trainers', function () {
+    return view('admin.all-trainers');
+})->name('admin.all-trainers');
+
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->name('admin.dashboard');
