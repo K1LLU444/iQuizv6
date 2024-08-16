@@ -14,7 +14,7 @@ class CardController extends Controller
                 'title' => 'ITILv4 Foundation',
                 'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vero, sit numquam fugit repellat laudantium similique ab temporibus eum ea necessitatibus odit autem accusantium ullam? Expedita architecto alias ut nobis!',
                 'url' => '#',
-                'buttonText' => 'Join Exam',
+                'buttonText' => 'Get Started',
                 'passingScore' => '65%',
                 'numItems' => 40,
                 'timeLimit' => '60 minutes'
@@ -23,7 +23,7 @@ class CardController extends Controller
                 'title' => 'AWS Cloud Practitioner',
                 'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vero, sit numquam fugit repellat laudantium similique ab temporibus eum ea necessitatibus odit autem accusantium ullam? Expedita architecto alias ut nobis!',
                 'url' => '#',
-                'buttonText' => 'Join Exam',
+                'buttonText' => 'Get Started',
                 'passingScore' => '70%',
                 'numItems' => 60,
                 'timeLimit' => '90 minutes'
@@ -55,7 +55,7 @@ class CardController extends Controller
                 'title' => 'MS Azure Fundamentals',
                 'description' => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vero, sit numquam fugit repellat laudantium similique ab temporibus eum ea necessitatibus odit autem accusantium ullam? Expedita architecto alias ut nobis!",
                 'url' => '#',
-                'buttonText' => 'Get Started',
+                'buttonText' => 'Request to Join',
                 'passingScore' => '60%',
                 'numItems' => 50,
                 'timeLimit' => '75 minutes'
@@ -64,7 +64,7 @@ class CardController extends Controller
                 'title' => 'MS Azure Administrator',
                 'description' => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vero, sit numquam fugit repellat laudantium similique ab temporibus eum ea necessitatibus odit autem accusantium ullam? Expedita architecto alias ut nobis!",
                 'url' => '#',
-                'buttonText' => 'Get Started',
+                'buttonText' => 'Request to Join',
                 'passingScore' => '75%',
                 'numItems' => 70,
                 'timeLimit' => '120 minutes'

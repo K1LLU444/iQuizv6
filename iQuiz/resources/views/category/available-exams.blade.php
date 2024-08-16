@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <x-join-button>
+    <x-join-button href="{{route('category.join')}}">
         Join an exam
     </x-join-button>
 
