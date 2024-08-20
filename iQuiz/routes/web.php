@@ -52,5 +52,8 @@ Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->name('admin.dashboard');
 
+Route::get('/admin/confirm-delete/{id}', [AdminController::class, 'showCategoryDeleteConfirmation'])->name('admin.category.confirm-delete');
+Route::delete('/admin/delete/{id}', [AdminController::class, 'deleteCategory'])->name('admin.category.delete');
+
 
 require __DIR__.'/auth.php';

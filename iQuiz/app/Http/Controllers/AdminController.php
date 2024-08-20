@@ -25,4 +25,18 @@ class AdminController extends Controller
     {
         return view('admin.all-category');
     }
+
+    public function showCategoryDeleteConfirmation($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('admin.category.confirm-delete', compact('category'));
+    }
+
+    public function deleteCategory(Request $request, $id)
+    {
+        $category = Category::findOrFail($id);
+        $category->delete();
+
+        return redirect()->route('admin.all-category')->with('success', 'Category deleted successfully!');
+    }
 }
