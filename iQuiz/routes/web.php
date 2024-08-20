@@ -59,4 +59,8 @@ Route::get('/admin/add-questionnaire', function () {
     return view('admin.add-questionnaire');
 })->name('admin.add-questionnaire');
 
+Route::get('/admin/all-questionnaire', function () {
+    return view('admin.all-questionnaire');
+})->name('admin.all-questionnaire');
+
 require __DIR__.'/auth.php';
