@@ -13,7 +13,7 @@
     </div>
 
     <div class="p-4">
-        <button class=" bg-pink-500 text-white p-2 rounded w-full">+ Add Question</button>
+        <button class=" bg-button-bg text-white p-2 rounded w-full">+ Add Question</button>
     </div>
 
 
