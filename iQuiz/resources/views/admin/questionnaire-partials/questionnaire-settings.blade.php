@@ -9,13 +9,8 @@
             <option value="text">Text</option>
             <option value="paragraph">Paragraph</option>
             <option value="drag-drop">Drag and Drop</option>
-        </select>
-    </div>
+            <option value="matching">Matching Type</option>
 
-    <div class="mb-6">
-        <label class="block text-gray-800 font-medium mb-2">Answers</label>
-        <select class="w-full p-3 border rounded focus:ring-2 focus:ring-blue-500">
-            <option>Select answer keys</option>
         </select>
     </div>
 

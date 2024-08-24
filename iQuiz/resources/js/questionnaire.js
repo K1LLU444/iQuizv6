@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateAnswersContainer() {
         const selectedVariant = variantSelect.value;
-        answersContainer.innerHTML = ''; // Clear existing answer inputs
+        answersContainer.innerHTML = '';
 
         if (selectedVariant === 'drag-drop') {
-            addDragDropItem(); // Initialize for drag-drop items
+            addDragDropItem();
             Sortable.create(answersContainer, {
                 animation: 150,
                 handle: '.drag-handle',
@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         } else if (selectedVariant === 'multiple-choice') {
-            addMultipleChoiceItem(); // Initialize for multiple choice items
+            addMultipleChoiceItem();
         } else if (selectedVariant === 'checkboxes') {
-            addCheckboxItem(); // Initialize for checkbox items
+            addCheckboxItem(); 
         } else if (selectedVariant === 'text') {
-            addTextItem(); // Initialize for text input items (identification)
+            addTextItem(); 
         } else if (selectedVariant === 'paragraph') {
-            addParagraphItem(); // Initialize for paragraph (essay) items
+            addParagraphItem(); 
         }
     }
 
@@ -77,15 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
         answersContainer.appendChild(newParagraphItem);
     }
 
-    // Initialize answers container based on the default variant
     updateAnswersContainer();
 
-    // Add event listener to update answers when variant changes
     variantSelect.addEventListener('change', function() {
         updateAnswersContainer();
     });
 
-    // Add event listener to dynamically add one answer input
     addAnswerBtn.addEventListener('click', function() {
         const selectedVariant = variantSelect.value;
         if (selectedVariant === 'drag-drop') {

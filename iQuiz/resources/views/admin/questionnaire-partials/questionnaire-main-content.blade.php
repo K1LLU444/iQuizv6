@@ -6,6 +6,6 @@
         </div>
 
         <button id="add-answer-btn" class="bg-gray-200 p-3 rounded-lg shadow-sm mb-2">+ Add Answer</button>
-        <button id="submit-question-btn" class="bg-button-bg text-white p-3 rounded-lg shadow-lg">Submit Question</button>
+        <button id="submit-question-btn" class="bg-blue-700 text-gray-100 p-3 rounded-lg shadow-lg hover:bg-blue-800 ">Submit Question</button>
     </div>
 </div>

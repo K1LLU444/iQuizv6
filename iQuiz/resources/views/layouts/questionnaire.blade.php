@@ -16,7 +16,7 @@
 </head>
 <body class="bg-gray-100 text-gray-900 font-satoshi">
     <div class="flex flex-col h-screen border-1">
-        @include('partials.header', ['headerTitle' => $headerTitle ?? 'Default Title'])
+        @include('partials.questionnaire-header', ['headerTitle' => $headerTitle ?? 'Default Title'])
 
         <div class="flex flex-1 overflow-hidden">
             <aside class="w-1/4 bg-white shadow-lg overflow-y-auto">
