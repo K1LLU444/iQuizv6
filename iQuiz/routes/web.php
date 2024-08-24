@@ -63,4 +63,9 @@ Route::get('/admin/all-questionnaire', function () {
     return view('admin.all-questionnaire');
 })->name('admin.all-questionnaire');
 
+Route::get('/admin/questionnaire', function () {
+    return view('layouts.questionnaire');
+})->name('admin.questionnaire');
+
+
 require __DIR__.'/auth.php';
