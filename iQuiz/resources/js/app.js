@@ -4,6 +4,8 @@ import './bootstrap';
 
 import Alpine from 'alpinejs';
 
+import './questionnaire';
+
 window.Alpine = Alpine;
 
 Alpine.start();

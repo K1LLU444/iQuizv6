@@ -48,3 +48,20 @@ body {
   }
   
   
+.drag-drop-item {
+    position: relative;
+}
+
+.item-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.item-controls button {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+

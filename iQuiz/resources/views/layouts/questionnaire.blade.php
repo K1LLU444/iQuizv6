@@ -6,10 +6,16 @@
     <title>@yield('title', 'Questionnaire')</title>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
+    @vite('resources/js/questionnaire.js')
+
+    <script src="{{ asset('js/questionnaire.js') }}" defer></script>
 </head>
 <body class="bg-gray-100 text-gray-900 font-satoshi">
-    <div class="flex flex-col h-screen">
+    <div class="flex flex-col h-screen border-1">
         @include('partials.header', ['headerTitle' => $headerTitle ?? 'Default Title'])
 
         <div class="flex flex-1 overflow-hidden">
@@ -17,11 +23,11 @@
                 @include('admin.questionnaire-partials.questionnaire-sidebar') 
             </aside>
 
-            <main class="flex-1 bg-gray-50 p-6 overflow-y-auto">
+            <main class="flex-1 bg-gray-100 p-6 overflow-y-auto">
                 @include('admin.questionnaire-partials.questionnaire-main-content')
             </main>
 
-            <aside class="w-1/4 bg-white shadow-lg p-6">
+            <aside class="w-1/4 bg-white shadow-lg">
                 @include('admin.questionnaire-partials.questionnaire-settings') 
             </aside>
         </div>
