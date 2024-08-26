@@ -65,3 +65,15 @@ body {
 }
 
 
+.delete-button {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-button:hover {
+  color: #e53e3e; /* Tailwind's red-500 color */
+}
+
