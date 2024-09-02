@@ -33,6 +33,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+      // Function to reload matching keys
+    function reloadMatchingKeys() {
+        createMatchingKey();
+    }
+
+    // Event listener for the Enter key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            reloadMatchingKeys();
+        }
+    });
+
+    reloadMatchingKeyBtn.addEventListener('click', reloadMatchingKeys);
+
     function createDeleteButton(container) {
         const deleteButton = document.createElement('button');
         deleteButton.className = 'delete-button text-red-500 hover:text-red-700';
