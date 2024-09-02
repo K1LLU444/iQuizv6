@@ -16,16 +16,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (selectedVariant === 'matching') {
             addMatchingItem();
-        } else if (selectedVariant === 'drag-drop') {
-            addDragDropItem();
-        } else if (selectedVariant === 'multiple-choice') {
-            addMultipleChoiceItem();
-        } else if (selectedVariant === 'checkboxes') {
-            addCheckboxItem();
-        } else if (selectedVariant === 'text') {
-            addTextItem();
-        } else if (selectedVariant === 'paragraph') {
-            addParagraphItem();
+            addAnswerBtn.classList.add('hidden'); // Hide Add Answer button
+        } else {
+            addAnswerBtn.classList.remove('hidden'); // Show Add Answer button
+            if (selectedVariant === 'drag-drop') {
+                addDragDropItem();
+            } else if (selectedVariant === 'multiple-choice') {
+                addMultipleChoiceItem();
+            } else if (selectedVariant === 'checkboxes') {
+                addCheckboxItem();
+            } else if (selectedVariant === 'text') {
+                addTextItem();
+            } else if (selectedVariant === 'paragraph') {
+                addParagraphItem();
+            }
         }
     }
 
@@ -201,9 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     variantSelect.addEventListener('change', updateAnswersContainer);
     addAnswerBtn.addEventListener('click', function() {
         const selectedVariant = variantSelect.value;
-        if (selectedVariant === 'matching') {
-            addMatchingItem();
-        } else if (selectedVariant === 'drag-drop') {
+        if (selectedVariant === 'drag-drop') {
             addDragDropItem();
         } else if (selectedVariant === 'multiple-choice') {
             addMultipleChoiceItem();
@@ -223,4 +225,6 @@ document.addEventListener('DOMContentLoaded', function() {
     reloadMatchingKeyBtn.addEventListener('click', function() {
         createMatchingKey();
     });
+
+    updateAnswersContainer(); // Initialize on load
 });
