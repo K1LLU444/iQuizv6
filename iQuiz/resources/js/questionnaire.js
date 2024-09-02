@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const variantSelect = document.getElementById('variant-select');
     const answersContainer = document.getElementById('answers-container');
     const addAnswerBtn = document.getElementById('add-answer-btn');
+    const addFileBtn = document.getElementById('add-file-btn');
+    const fileInputsContainer = document.getElementById('file-inputs-container');
     const matchingKeyContainer = document.getElementById('matching-key-container');
     const matchingKeyList = document.getElementById('matching-key-list');
     const saveMatchingKeyBtn = document.getElementById('save-matching-key');
@@ -9,16 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateAnswersContainer() {
         const selectedVariant = variantSelect.value;
-        answersContainer.innerHTML = ''; // Clear existing answer inputs
+        answersContainer.innerHTML = '';
 
-        // Hide the matching key container if it's not relevant
         matchingKeyContainer.classList.add('hidden');
 
         if (selectedVariant === 'matching') {
             addMatchingItem();
-            addAnswerBtn.classList.add('hidden'); // Hide Add Answer button
+            addAnswerBtn.classList.add('hidden');
         } else {
-            addAnswerBtn.classList.remove('hidden'); // Show Add Answer button
+            addAnswerBtn.classList.remove('hidden');
             if (selectedVariant === 'drag-drop') {
                 addDragDropItem();
             } else if (selectedVariant === 'multiple-choice') {
@@ -33,27 +34,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-      // Function to reload matching keys
+    function addFileInput() {
+        const fileInputContainer = document.createElement('div');
+        fileInputContainer.className = 'file-input-container mb-2 flex items-center';
+
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.className = 'file-input p-2 border rounded w-full';
+
+        const deleteFileBtn = document.createElement('button');
+        deleteFileBtn.className = 'delete-file-btn text-red-500 hover:text-red-700 ml-2';
+        deleteFileBtn.innerHTML = '&times;';
+        deleteFileBtn.addEventListener('click', function() {
+            fileInputContainer.remove();
+        });
+
+        fileInputContainer.appendChild(fileInput);
+        fileInputContainer.appendChild(deleteFileBtn);
+        fileInputsContainer.appendChild(fileInputContainer);
+    }
+
     function reloadMatchingKeys() {
         createMatchingKey();
     }
 
-    // Event listener for the Enter key
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            reloadMatchingKeys();
-        }
-    });
-
-    reloadMatchingKeyBtn.addEventListener('click', reloadMatchingKeys);
-
     function createDeleteButton(container) {
         const deleteButton = document.createElement('button');
         deleteButton.className = 'delete-button text-red-500 hover:text-red-700';
-        deleteButton.innerHTML = '&times;'; // Unicode for multiplication sign
+        deleteButton.innerHTML = '&times;';
         deleteButton.addEventListener('click', function() {
             container.remove();
-            createMatchingKey(); // Update matching key list after removal if matching variant is active
+            if (variantSelect.value === 'matching') {
+                createMatchingKey();
+            }
         });
         return deleteButton;
     }
@@ -68,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const rightSide = document.createElement('div');
         rightSide.className = 'matching-right-side';
 
-        // Add buttons to add items
         const addButtonContainer = document.createElement('div');
         addButtonContainer.className = 'flex justify-between items-center mb-2';
 
@@ -95,17 +107,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         answersContainer.appendChild(matchingItemContainer);
 
-        // Add initial items
         addLeftItem(leftSide);
         addRightItem(rightSide);
 
-        // Show matching key section
         matchingKeyContainer.classList.remove('hidden');
         createMatchingKey();
     }
 
     function addLeftItem(leftSide) {
-        const letter = String.fromCharCode(65 + leftSide.children.length); // A, B, C, etc.
+        const letter = String.fromCharCode(65 + leftSide.children.length);
 
         const newMatchingItemLeft = document.createElement('div');
         newMatchingItemLeft.className = 'matching-item-left mb-2 p-2 border rounded flex items-center';
@@ -113,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         newMatchingItemLeft.appendChild(createDeleteButton(newMatchingItemLeft));
 
         leftSide.appendChild(newMatchingItemLeft);
-        createMatchingKey(); // Update matching key
+        createMatchingKey();
     }
 
     function addRightItem(rightSide) {
@@ -123,11 +133,11 @@ document.addEventListener('DOMContentLoaded', function() {
         newMatchingItemRight.appendChild(createDeleteButton(newMatchingItemRight));
 
         rightSide.appendChild(newMatchingItemRight);
-        createMatchingKey(); // Update matching key
+        createMatchingKey();
     }
 
     function createMatchingKey() {
-        matchingKeyList.innerHTML = ''; // Clear existing keys
+        matchingKeyList.innerHTML = '';
 
         const leftItems = Array.from(document.querySelectorAll('.matching-left-side input'));
         const rightItems = Array.from(document.querySelectorAll('.matching-right-side input'));
@@ -145,14 +155,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const rightSelect = document.createElement('select');
             rightSelect.className = 'w-1/2 border rounded';
 
-            // Ensure the select element is updated with fresh options
             function updateDropdown() {
                 rightSelect.innerHTML = rightItems.map(item => `<option value="${item.value}">${item.value || 'No Description'}</option>`).join('');
             }
 
             updateDropdown();
 
-            rightSelect.addEventListener('focus', updateDropdown); // Update on focus
+            rightSelect.addEventListener('focus', updateDropdown);
 
             keyItem.appendChild(leftInput);
             keyItem.appendChild(rightSelect);
@@ -232,6 +241,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    addFileBtn.addEventListener('click', addFileInput);
+
     saveMatchingKeyBtn.addEventListener('click', function() {
         // Save matching keys logic here
     });
@@ -240,5 +251,12 @@ document.addEventListener('DOMContentLoaded', function() {
         createMatchingKey();
     });
 
-    updateAnswersContainer(); // Initialize on load
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            reloadMatchingKeys();
+        }
+    });
+
+    updateAnswersContainer();
 });

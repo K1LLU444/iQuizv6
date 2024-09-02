@@ -77,3 +77,29 @@ body {
   color: #e53e3e; /* Tailwind's red-500 color */
 }
 
+.file-input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.file-input {
+  flex: 1;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.delete-file-btn {
+  margin-left: 0.5rem;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container .delete-button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

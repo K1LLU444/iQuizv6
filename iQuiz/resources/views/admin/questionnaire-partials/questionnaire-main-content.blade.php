@@ -17,8 +17,12 @@
             <button id="save-matching-key" class="bg-blue-500 text-white p-2 rounded">Save</button>
         </div>
 
+        <div id="file-inputs-container" class="mb-4 mt-4">
+            <!-- File inputs will be added here -->
+        </div>
 
         <button id="add-answer-btn" class="bg-gray-200 p-3 rounded-lg shadow-sm mb-2">+ Add Answer</button>
+        <button id="add-file-btn" class="bg-gray-200 p-3 rounded-lg shadow-sm mb-2">+ Add File</button>
         <button id="submit-question-btn" class="bg-blue-700 text-gray-100 p-3 rounded-lg shadow-lg hover:bg-blue-800 ">Submit Question</button>
     </div>
 </div>
