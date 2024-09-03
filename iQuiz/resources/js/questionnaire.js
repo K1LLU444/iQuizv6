@@ -4,20 +4,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const addAnswerBtn = document.getElementById('add-answer-btn');
     const addFileBtn = document.getElementById('add-file-btn');
     const fileInputsContainer = document.getElementById('file-inputs-container');
+    const imageUploadContainer = document.getElementById('image-upload-container');
+    const imageFileInputs = document.getElementById('image-file-inputs');
     const matchingKeyContainer = document.getElementById('matching-key-container');
     const matchingKeyList = document.getElementById('matching-key-list');
     const saveMatchingKeyBtn = document.getElementById('save-matching-key');
     const reloadMatchingKeyBtn = document.getElementById('reload-matching-key');
+    const addFileUploadBtn = document.getElementById('add-file-upload');
 
     function updateAnswersContainer() {
         const selectedVariant = variantSelect.value;
         answersContainer.innerHTML = '';
 
         matchingKeyContainer.classList.add('hidden');
+        imageUploadContainer.classList.add('hidden');
 
         if (selectedVariant === 'matching') {
             addMatchingItem();
             addAnswerBtn.classList.add('hidden');
+            imageUploadContainer.classList.remove('hidden');
         } else {
             addAnswerBtn.classList.remove('hidden');
             if (selectedVariant === 'drag-drop') {
@@ -52,6 +57,37 @@ document.addEventListener('DOMContentLoaded', function() {
         fileInputContainer.appendChild(fileInput);
         fileInputContainer.appendChild(deleteFileBtn);
         fileInputsContainer.appendChild(fileInputContainer);
+    }
+
+    function addImageFileInput() {
+        const imageFileInputContainer = document.createElement('div');
+        imageFileInputContainer.className = 'image-file-input-container mb-2 flex items-center';
+
+        const imageFileInput = document.createElement('input');
+        imageFileInput.type = 'file';
+        imageFileInput.className = 'image-file-input p-2 border rounded w-full';
+
+        const dropdown = document.createElement('select');
+        dropdown.className = 'ml-2 border rounded';
+
+        function updateDropdown() {
+            dropdown.innerHTML = Array.from(document.querySelectorAll('.matching-left-side input')).map(item => `<option value="${item.value}">${item.value || 'No Description'}</option>`).join('');
+        }
+
+        updateDropdown();
+        dropdown.addEventListener('focus', updateDropdown);
+
+        const deleteImageBtn = document.createElement('button');
+        deleteImageBtn.className = 'delete-image-btn text-red-500 hover:text-red-700 ml-2';
+        deleteImageBtn.innerHTML = '&times;';
+        deleteImageBtn.addEventListener('click', function() {
+            imageFileInputContainer.remove();
+        });
+
+        imageFileInputContainer.appendChild(imageFileInput);
+        imageFileInputContainer.appendChild(dropdown);
+        imageFileInputContainer.appendChild(deleteImageBtn);
+        imageFileInputs.appendChild(imageFileInputContainer);
     }
 
     function reloadMatchingKeys() {
@@ -242,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     addFileBtn.addEventListener('click', addFileInput);
+    addFileUploadBtn.addEventListener('click', addImageFileInput);
 
     saveMatchingKeyBtn.addEventListener('click', function() {
         // Save matching keys logic here
