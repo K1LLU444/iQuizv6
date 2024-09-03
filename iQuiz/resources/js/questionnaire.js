@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const variantSelect = document.getElementById('variant-select');
     const answersContainer = document.getElementById('answers-container');
     const addAnswerBtn = document.getElementById('add-answer-btn');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const deleteFileBtn = document.createElement('button');
         deleteFileBtn.className = 'delete-file-btn text-red-500 hover:text-red-700 ml-2';
         deleteFileBtn.innerHTML = '&times;';
-        deleteFileBtn.addEventListener('click', function() {
+        deleteFileBtn.addEventListener('click', function () {
             fileInputContainer.remove();
         });
 
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const deleteButton = document.createElement('button');
         deleteButton.className = 'delete-button text-red-500 hover:text-red-700';
         deleteButton.innerHTML = '&times;';
-        deleteButton.addEventListener('click', function() {
+        deleteButton.addEventListener('click', function () {
             container.remove();
             if (variantSelect.value === 'matching') {
                 createMatchingKey();
@@ -87,14 +87,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const addLeftButton = document.createElement('button');
         addLeftButton.className = 'bg-blue-500 text-white p-2 rounded mr-2';
         addLeftButton.textContent = '+ Add Left Item';
-        addLeftButton.addEventListener('click', function() {
+        addLeftButton.addEventListener('click', function () {
             addLeftItem(leftSide);
         });
 
         const addRightButton = document.createElement('button');
         addRightButton.className = 'bg-yellow-500 text-white p-2 rounded';
         addRightButton.textContent = '+ Add Right Item';
-        addRightButton.addEventListener('click', function() {
+        addRightButton.addEventListener('click', function () {
             addRightItem(rightSide);
         });
 
@@ -144,7 +144,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         leftItems.forEach((leftItem) => {
             const keyItem = document.createElement('div');
-            keyItem.className = 'matching-key-item mb-2 p-2 border rounded flex items-center justify-between';
+            keyItem.className = 'matching-key-item mb-2 p-2 border rounded flex flex-col';
+
+            const keyRow = document.createElement('div');
+            keyRow.className = 'flex items-center justify-between';
 
             const leftInput = document.createElement('input');
             leftInput.type = 'text';
@@ -153,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leftInput.disabled = true;
 
             const rightSelect = document.createElement('select');
-            rightSelect.className = 'w-1/2 border rounded';
+            rightSelect.className = 'w-1/2 border rounded mr-2';
 
             function updateDropdown() {
                 rightSelect.innerHTML = rightItems.map(item => `<option value="${item.value}">${item.value || 'No Description'}</option>`).join('');
@@ -163,9 +166,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
             rightSelect.addEventListener('focus', updateDropdown);
 
-            keyItem.appendChild(leftInput);
-            keyItem.appendChild(rightSelect);
+            // Add Image Button
+            const addImageButton = document.createElement('button');
+            addImageButton.className = 'bg-green-500 text-white px-4 py-1 mt-2 rounded hover:bg-green-600';
+            addImageButton.textContent = '+ Add Image';
 
+            addImageButton.addEventListener('click', function () {
+                // Create a file input when the button is clicked
+                const fileInputContainer = document.createElement('div');
+                fileInputContainer.className = 'file-input-container flex items-center mt-2';
+
+                const fileInput = document.createElement('input');
+                fileInput.type = 'file';
+                fileInput.className = 'file-input p-2 border rounded w-full';
+
+                const deleteFileBtn = document.createElement('button');
+                deleteFileBtn.className = 'delete-file-btn text-red-500 hover:text-red-700 ml-2';
+                deleteFileBtn.innerHTML = '&times;';
+                deleteFileBtn.addEventListener('click', function () {
+                    fileInputContainer.remove();
+                });
+
+                fileInputContainer.appendChild(fileInput);
+                fileInputContainer.appendChild(deleteFileBtn);
+                keyItem.appendChild(fileInputContainer); // Append file input to the key item
+            });
+
+            keyRow.appendChild(leftInput);
+            keyRow.appendChild(rightSelect);
+            keyRow.appendChild(addImageButton); // Append the Add Image button to the key row
+
+            keyItem.appendChild(keyRow);
             matchingKeyList.appendChild(keyItem);
         });
     }
@@ -207,56 +238,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function addTextItem() {
         const newTextItem = document.createElement('div');
-        newTextItem.className = 'text-item mb-2 p-2 border rounded flex items-center';
-        newTextItem.innerHTML = `
-            <input type="text" placeholder="Short Text Answer" class="w-full border rounded">
-        `;
+        newTextItem.className = 'text-item mb-2 p-2 border rounded';
+        newTextItem.innerHTML = `<input type="text" placeholder="Short Answer" class="w-full border rounded">`;
         newTextItem.appendChild(createDeleteButton(newTextItem));
         answersContainer.appendChild(newTextItem);
     }
 
     function addParagraphItem() {
         const newParagraphItem = document.createElement('div');
-        newParagraphItem.className = 'paragraph-item mb-2 p-2 border rounded flex items-center';
-        newParagraphItem.innerHTML = `
-            <textarea placeholder="Long Text Answer" class="w-full border rounded"></textarea>
-        `;
+        newParagraphItem.className = 'paragraph-item mb-2 p-2 border rounded';
+        newParagraphItem.innerHTML = `<textarea placeholder="Long Answer" class="w-full border rounded"></textarea>`;
         newParagraphItem.appendChild(createDeleteButton(newParagraphItem));
         answersContainer.appendChild(newParagraphItem);
     }
 
     variantSelect.addEventListener('change', updateAnswersContainer);
-    addAnswerBtn.addEventListener('click', function() {
-        const selectedVariant = variantSelect.value;
-        if (selectedVariant === 'drag-drop') {
-            addDragDropItem();
-        } else if (selectedVariant === 'multiple-choice') {
-            addMultipleChoiceItem();
-        } else if (selectedVariant === 'checkboxes') {
-            addCheckboxItem();
-        } else if (selectedVariant === 'text') {
-            addTextItem();
-        } else if (selectedVariant === 'paragraph') {
-            addParagraphItem();
-        }
-    });
-
+    addAnswerBtn.addEventListener('click', updateAnswersContainer);
     addFileBtn.addEventListener('click', addFileInput);
-
-    saveMatchingKeyBtn.addEventListener('click', function() {
-        // Save matching keys logic here
-    });
-
-    reloadMatchingKeyBtn.addEventListener('click', function() {
-        createMatchingKey();
-    });
-
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            reloadMatchingKeys();
-        }
-    });
+    saveMatchingKeyBtn.addEventListener('click', createMatchingKey);
+    reloadMatchingKeyBtn.addEventListener('click', reloadMatchingKeys);
 
     updateAnswersContainer();
 });
