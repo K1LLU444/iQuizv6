@@ -6,7 +6,7 @@
         <span class="text-gray-200 text-sm font-medium">Back</span>
     </a>
     <div class="flex-1 flex justify-center">
-        <h2 class="text-lg text-gray-100 font-semibold">MS Azure Fundamentals</h2>
+        <h2 class="text-lg text-gray-100 font-semibold">MS Azure Fundamentals Exam</h2>
     </div>
     <a href="{{ route('profile') }}">
         <div class="flex items-center space-x-4 mr-4">

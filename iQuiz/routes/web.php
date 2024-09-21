@@ -67,5 +67,16 @@ Route::get('/admin/questionnaire', function () {
     return view('layouts.questionnaire');
 })->name('admin.questionnaire');
 
+Route::get('/get-started', function () {
+    return view('student-questionnaire.get-started');
+})->name('admin.questionnaire');
+
+Route::view('/exam/multiple-choice', 'student-questionnaire.multiple-choice')->name('exam.multiple-choice');
+Route::view('/exam/checkboxes', 'student-questionnaire.checkboxes')->name('exam.checkboxes');
+Route::view('/exam/text', 'student-questionnaire.text')->name('exam.text');
+Route::view('/exam/paragraph', 'student-questionnaire.paragraph')->name('exam.paragraph');
+Route::view('/exam/drag-drop', 'student-questionnaire.drag-drop')->name('exam.drag-drop');
+Route::view('/exam/matching', 'student-questionnaire.matching')->name('exam.matching');
+
 
 require __DIR__.'/auth.php';
