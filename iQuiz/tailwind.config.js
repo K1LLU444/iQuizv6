@@ -17,6 +17,7 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 satoshi: ['Satoshi', 'sans-serif'],
+                roboto: ['Roboto', 'sans-serif'],
             },
             colors: {
                 'custom-gray': 'rgb(222, 228, 238)',

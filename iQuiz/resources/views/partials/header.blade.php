@@ -1,7 +1,7 @@
 <div class="bg-white shadow p-4 flex justify-between items-center font-satoshi">
     
     <div class="flex items-center border border-transparent rounded-lg p-1 w-1/3">
-        <h2 class="text-xl font-semibold">{{ $headerTitle ?? 'Default Title' }}</h2>
+        <h2 class="text-xl font-roboto font-semibold" title="hello">{{ $headerTitle ?? 'Default Title' }}</h2>
     </div>
 
     <a href="{{ route('profile') }}">

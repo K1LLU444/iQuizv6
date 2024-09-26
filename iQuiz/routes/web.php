@@ -78,5 +78,8 @@ Route::view('/exam/paragraph', 'student-questionnaire.paragraph')->name('exam.pa
 Route::view('/exam/drag-drop', 'student-questionnaire.drag-drop')->name('exam.drag-drop');
 Route::view('/exam/matching', 'student-questionnaire.matching')->name('exam.matching');
 
+Route::get('/questions-results', function () {
+    return view('layouts.questions-results');
+})->name('questions-results');
 
 require __DIR__.'/auth.php';
