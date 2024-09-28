@@ -19,9 +19,7 @@ Route::get('/dashboard', function () {
     return view('dashboard/dashboard');
 })->name('dashboard');
 
-Route::get('/profile', function () {
-    return view('profile/profile');
-})->name('profile');
+Route::get('/profile', [AdminController::class, 'profile']) -> name('profile');
 
 Route::get('/category/available-exams', [CardController::class, 'showAvailableExams'])->name('category.available-exams');
 Route::get('/category/join', [CardController::class, 'showJoinExams'])->name('category.join');
@@ -82,4 +80,7 @@ Route::get('/questions-results', function () {
     return view('layouts.questions-results');
 })->name('questions-results');
 
+Route::get('/edit', function () {
+    return view('admin.edit');
+})->name('admin.edit');
 require __DIR__.'/auth.php';

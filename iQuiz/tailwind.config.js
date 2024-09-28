@@ -27,6 +27,7 @@ export default {
                 'custom-black' : '#202020',
                 'custom-bt' : '#0eb1d2',
                 'custom-bt-hover' : '#34E4EA',
+                'softwhite' : '#f8f9fa',
             },
             width: {
                 'custom-sidebar-width' : '290px',
