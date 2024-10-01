@@ -9,4 +9,3 @@ import './questionnaire';
 window.Alpine = Alpine;
 
 Alpine.start();
-

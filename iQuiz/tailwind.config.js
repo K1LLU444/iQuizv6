@@ -14,8 +14,15 @@ export default {
 
     theme: {
         extend: {
+            opacity: {
+                '94' : '0.94',
+            },
+            backgroundImage: {
+                'homepage-bg': "url('/images/bg-img.jpg')",
+            },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                poppins: ['Poppins', 'sans-serif'],
                 satoshi: ['Satoshi', 'sans-serif'],
                 roboto: ['Roboto', 'sans-serif'],
             },
@@ -28,10 +35,12 @@ export default {
                 'custom-bt' : '#0eb1d2',
                 'custom-bt-hover' : '#34E4EA',
                 'softwhite' : '#f8f9fa',
+                'bg-violet': '#020F1F',
             },
             width: {
                 'custom-sidebar-width' : '290px',
-              },
+                '1366px': '1170px',
+            },
         },
     },
 

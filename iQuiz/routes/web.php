@@ -83,4 +83,9 @@ Route::get('/questions-results', function () {
 Route::get('/edit', function () {
     return view('admin.edit');
 })->name('admin.edit');
+
+Route::get('/index', function () {
+    return view('layouts.index');
+})->name('index');
+
 require __DIR__.'/auth.php';
