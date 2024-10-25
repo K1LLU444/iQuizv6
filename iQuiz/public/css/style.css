@@ -398,8 +398,8 @@ body.dark .sidebar li a:hover .text {
 
 .mode-switch {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 90px;
+    right: 30px;
     background: var(--primary-color);
     border-radius: 6px;
     padding: 5px 10px;

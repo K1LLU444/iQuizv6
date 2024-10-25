@@ -18,6 +18,7 @@
 
     <section class="home">
 
+        @include('partials.header')
         @yield('content')
 
     </section>
