@@ -16,15 +16,14 @@
         <div class="menu">
             <ul class="menu links">
                 <!-- STUDENT SIDE BAR -->
-                @if (Auth::user()->type_name === 'student')
                 <li class="nav-link">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="#">
                         <i class='fa-solid fa-calendar-days icon'></i>
                         <span class="text nav-text">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="{{ route('profile') }}">
+                    <a href="#">
                         <i class='fa-solid fa-user icon'></i>
                         <span class="text nav-text">Profile</span>
                     </a>
@@ -38,28 +37,27 @@
                         </svg>
                     </a>
                     <div x-show="open" class="absolute top-0 left-full mt-0 ml-2 bg-white p-4 rounded shadow-lg w-48 space-y-2" x-cloak>
-                        <a href="{{ route('category.join') }}" class="block p-2 text-sm text-sidebar-menu hover:text-white rounded ease-in-out duration-200">Join an exam</a>
-                        <a href="{{ route('category.available-exams') }}" class="block p-2 text-sm text-sidebar-menu hover:text-white rounded ease-in-out duration-200">Available Exams</a>
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white rounded ease-in-out duration-200">Join an exam</a>
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white rounded ease-in-out duration-200">Available Exams</a>
                     </div>
                 </li>
 
                 <li class="nav-link">
-                    <a href="{{ route('history') }}">
+                    <a href="#">
                         <i class='fa-solid fa-history icon'></i>
                         <span class="text nav-text">History</span>
                     </a>
                 </li>
 
                 <!-- TRAINER SIDE BAR -->
-                @elseif (Auth::user()->type_name === 'trainer')
                 <li class="nav-link">
-                    <a href="{{ route('trainer.dashboard') }}">
+                    <a href="#">
                         <i class='fa-solid fa-house icon'></i>
                         <span class="text nav-text">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="{{ route('profile') }}">
+                    <a href="#">
                         <i class='fa-solid fa-user-circle icon'></i>
                         <span class="text nav-text">Profile</span>
                     </a>
@@ -73,22 +71,21 @@
                         </svg>
                     </a>
                     <div x-show="open" class="absolute top-0 left-full mt-0 ml-2 bg-white p-4 rounded shadow-lg w-48 space-y-2" x-cloak>
-                        <a href="{{route('trainer.add-questionnaire')}}" class="block p-2 text-sm text-sidebar-menu hover:text-white rounded ease-in-out duration-200">Add a Questionnaire</a>
-                        <a href="{{route('trainer.all-category')}}" class="block p-2 text-sm text-sidebar-menu hover:text-white rounded ease-in-out duration-200">View All Categories</a>
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white rounded ease-in-out duration-200">Add a Questionnaire</a>
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white rounded ease-in-out duration-200">View All Categories</a>
                     </div>
                 </li>
 
 
                 <!-- ADMIN SIDE BAR -->
-                @elseif (Auth::user()->type_name === 'admin')
                 <li class="nav-link">
-                    <a href="{{route('admin.dashboard.dashboard')}}">
+                    <a href="#">
                         <i class='fa-solid fa-house icon'></i>
                         <span class="text nav-text">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="{{route('profile')}}">
+                    <a href="#">
                         <i class='fa-solid fa-user-circle icon'></i>
                         <span class="text nav-text">Profile</span>
                     </a>
@@ -104,28 +101,27 @@
                     </a>
                     <div x-show="open" class="absolute top-0 left-full mt-0 ml-2 bg-white p-4 rounded shadow-lg w-48 space-y-2" x-cloak>
                         <div class="flex items-center justify-between">
-                            <button href="{{route('admin.all-questionnaires')}}" class="flex-grow block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 text-left rounded-l">
+                            <button href="#" class="flex-grow block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 text-left rounded-l">
                                 Questionnaires
                             </button>
-                            <button href="{{route('admin.add-questionnaire', ['from' => 'dashboard'])}}" class="p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 rounded-r">
+                            <button href="#" class="p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 rounded-r">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </div>
                         <div class="flex items-center justify-between">
-                            <button href="{{route('admin.all-category')}}" class="flex-grow block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 text-left rounded-l">
+                            <button href="#" class="flex-grow block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 text-left rounded-l">
                                 Categories
                             </button>
-                            <button href="{{route('admin.add-category', ['from' => 'dashboard'])}}" class="p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 rounded-r">
+                            <button href="#" class="p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 rounded-r">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </div>
 
-                        <a href="{{route('admin.all-exam-request')}}" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-gray-700 rounded ease-in-out duration-200 relative">
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-gray-700 rounded ease-in-out duration-200 relative">
                             <span>Exam Requests</span>
                             <!-- Red dot for notification -->
-                                @if ($pendingExamRequests ->count() > 0)
                                 <span class="absolute top-0 right-0 mt-2 mr-2 flex items-center justify-center w-5 h-5 bg-red-600 text-white text-xs rounded-full">
-                                    {{ $pendingExamRequests ->count() }}
+                                    3
                                 </span>
                         </a>
                     </div>
@@ -141,27 +137,24 @@
                     </a>
                     <div x-show="openDropdown" class="absolute top-0 left-full mt-0 ml-2 bg-white p-4 rounded shadow-lg w-64 space-y-2" x-cloak>
                         <div class="flex items-center justify-between">
-                            <button href="{{route('admin.all-trainers')}}" class="flex-grow block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 text-left rounded-l">
+                            <button href="#" class="flex-grow block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 text-left rounded-l">
                                 Trainers
                             </button>
-                            <button href="{{route('admin.add-trainer', ['from' => 'dashboard'])}}" class="p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 rounded-r">
+                            <button href="#" class="p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 rounded-r">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </div>
-                        <a href="{{route('admin.all-students')}}" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] rounded ease-in-out duration-200">Students</a>
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] rounded ease-in-out duration-200">Students</a>
 
-                        <a href="{{route('admin.all-registration-request')}}" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] rounded ease-in-out duration-200 relative">
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] rounded ease-in-out duration-200 relative">
                             <span>Student Requests</span>
                             <!-- Red dot for notification -->
-                            @if ($pendingRegistrationRequests ->count() > 0)
                                 <span class="absolute top-0 right-0 mt-2 mr-2 flex items-center justify-center w-5 h-5 bg-red-600 text-white text-xs rounded-full">
-                                    {{ $pendingRegistrationRequests ->count() }}
+                                    3
                                 </span>
-                            @endif
                         </a>
                     </div>
                 </li>
-                @endif
 
 
                 <!-- old -->
@@ -197,7 +190,7 @@
         
         <div class="bottom-content">
 
-            <form method="POST" action="{{ route('logout') }}">
+            <form method="POST" action="#">
                 @csrf
                 <button type="submit" class="block w-full rounded h-12 p-2 space-x-5 bg-red-400 text-white hover:bg-red-600 text-left">
                     <i class='ml-2 bx bx-log-out text-[#707070] text-[20px]'></i>

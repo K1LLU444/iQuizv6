@@ -26,7 +26,7 @@
     <div class="mode-switch">
         <i class='bx bx-moon icon moon'></i>
         <i class='bx bx-sun icon sun'></i>
-    </div>  
+    </div>
 
     <!-- Vite JavaScript assets -->
     @vite('resources/js/app.js')
