@@ -17,7 +17,7 @@
     </style>
 </head>
 
-<body class="text-gray-900 font-poppins bg-cover bg-no-repeat min-h-screen" style="background-image: url('/images/bg-img3.png');">
+<body class="text-gray-900 font-poppins bg-cover bg-no-repeat min-h-screen" style="background-image: url('{{ asset('images/bg-img3.png') }}');">
     <div class="flex flex-col min-h-full relative justify-center">
         <div class="absolute top-0 left-0 w-full h-full bg-bg-violet opacity-94 z-[-1]"></div>
 
