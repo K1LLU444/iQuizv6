@@ -7,7 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     @vite('resources/css/app.css') {{-- Ensure Tailwind CSS is included --}}
-
+    
 </head>
 <body class="bg-gray-100 text-gray-900 font-satoshi">
 
@@ -44,10 +44,43 @@
                 </div>
 
                 <button class="bg-gray-300 px-4 py-2 rounded" id="next-btn">Next</button>
+
+
             </div>
         </footer>
 
     </div>
 
+    <script>
+        // JavaScript to control the countdown and progress bar depletion
+        const totalDuration = 60 * 60; // Total time in seconds (e.g., 1 hour)
+        let remainingTime = totalDuration;
+
+        const timeText = document.getElementById('time-text');
+        const progressBar = document.getElementById('progress-bar');
+
+        function updateTimer() {
+            // Update time text in hh:mm:ss format
+            const hours = Math.floor(remainingTime / 3600);
+            const minutes = Math.floor((remainingTime % 3600) / 60);
+            const seconds = remainingTime % 60;
+            timeText.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+            // Calculate and update progress bar width
+            const progressWidth = (remainingTime / totalDuration) * 100;
+            progressBar.style.width = `${progressWidth}%`;
+
+            // Decrement remaining time
+            remainingTime--;
+
+            // Stop timer at zero
+            if (remainingTime >= 0) {
+                setTimeout(updateTimer, 1000);
+            }
+        }
+
+        // Start the timer
+        updateTimer();
+    </script>
 </body>
 </html>

@@ -448,3 +448,7 @@ body.dark .mode-switch .moon {
     left: 5px; /* Reset position for closed sidebar */
 }
 
+.no-style {
+    all: unset;
+    display: inline; /* or any other display property you need */
+}

@@ -1,6 +1,6 @@
 <div class="flex-1 p-4">
     <div class="bg-white p-6 rounded-lg border shadow-lg">
-        <input type="text" placeholder="Question" class="w-full text-custom-black text-xl font-bold p-3 border-0 rounded-lg mb-4">
+        <textarea placeholder="Question" class="w-full text-custom-black text-xl font-bold p-3 border-1 border-gray-200 rounded-lg mb-4" rows="4"></textarea>
 
         <div id="answers-container">
         </div>

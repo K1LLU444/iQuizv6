@@ -37,8 +37,8 @@
                         </svg>
                     </a>
                     <div x-show="open" class="absolute top-0 left-full mt-0 ml-2 bg-white p-4 rounded shadow-lg w-48 space-y-2" x-cloak>
-                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white rounded ease-in-out duration-200">Join an exam</a>
-                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white rounded ease-in-out duration-200">Available Exams</a>
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white hover:bg-[#695CFE] ease-in-out duration-200 rounded">Join an exam</a>
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white hover:bg-[#695CFE] ease-in-out duration-200 rounded">Available Exams</a>
                     </div>
                 </li>
 
@@ -71,11 +71,10 @@
                         </svg>
                     </a>
                     <div x-show="open" class="absolute top-0 left-full mt-0 ml-2 bg-white p-4 rounded shadow-lg w-48 space-y-2" x-cloak>
-                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white rounded ease-in-out duration-200">Add a Questionnaire</a>
-                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white rounded ease-in-out duration-200">View All Categories</a>
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white hover:bg-[#695CFE] ease-in-out duration-200 rounded">Add a Questionnaire</a>
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white hover:bg-[#695CFE] ease-in-out duration-200 rounded">View All Categories</a>
                     </div>
                 </li>
-
 
                 <!-- ADMIN SIDE BAR -->
                 <li class="nav-link">
@@ -101,28 +100,28 @@
                     </a>
                     <div x-show="open" class="absolute top-0 left-full mt-0 ml-2 bg-white p-4 rounded shadow-lg w-48 space-y-2" x-cloak>
                         <div class="flex items-center justify-between">
-                            <button href="#" class="flex-grow block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 text-left rounded-l">
+                            <a href="#" class="flex-grow block p-2 text-sm text-sidebar-menu hover:text-white hover:bg-[#695CFE] ease-in-out duration-200 text-left rounded-l">
                                 Questionnaires
-                            </button>
-                            <button href="#" class="p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 rounded-r">
+                            </a>
+                            <a href="#" class="p-2 text-sm text-sidebar-menu hover:text-white hover:bg-[#695CFE] ease-in-out duration-200 rounded-r">
                                 <i class="fa-solid fa-plus"></i>
-                            </button>
+                            </a>
                         </div>
                         <div class="flex items-center justify-between">
-                            <button href="#" class="flex-grow block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 text-left rounded-l">
+                            <a href="#" class="flex-grow block p-2 text-sm text-sidebar-menu hover:text-white hover:bg-[#695CFE] ease-in-out duration-200 text-left rounded-l">
                                 Categories
-                            </button>
-                            <button href="#" class="p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 rounded-r">
+                            </a>
+                            <a href="#" class="p-2 text-sm text-sidebar-menu hover:text-white hover:bg-[#695CFE] ease-in-out duration-200 rounded-r">
                                 <i class="fa-solid fa-plus"></i>
-                            </button>
+                            </a>
                         </div>
 
-                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-gray-700 rounded ease-in-out duration-200 relative">
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white hover:bg-gray-700 rounded ease-in-out duration-200 relative">
                             <span>Exam Requests</span>
                             <!-- Red dot for notification -->
-                                <span class="absolute top-0 right-0 mt-2 mr-2 flex items-center justify-center w-5 h-5 bg-red-600 text-white text-xs rounded-full">
-                                    3
-                                </span>
+                            <span class="absolute top-0 right-0 mt-2 mr-2 flex items-center justify-center w-5 h-5 bg-red-600 text-white text-xs rounded-full">
+                                3
+                            </span>
                         </a>
                     </div>
                 </li>
@@ -137,59 +136,28 @@
                     </a>
                     <div x-show="openDropdown" class="absolute top-0 left-full mt-0 ml-2 bg-white p-4 rounded shadow-lg w-64 space-y-2" x-cloak>
                         <div class="flex items-center justify-between">
-                            <button href="#" class="flex-grow block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 text-left rounded-l">
+                            <button href="#" class="flex-grow block p-2 text-sm text-sidebar-menu hover:bg-[#695CFE] hover:text-white ease-in-out duration-200 text-left rounded-l">
                                 Trainers
                             </button>
-                            <button href="#" class="p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] ease-in-out duration-200 rounded-r">
+                            <button href="#" class="p-2 text-sm text-sidebar-menu hover:bg-[#695CFE] hover:text-white ease-in-out duration-200 rounded-r">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </div>
-                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] rounded ease-in-out duration-200">Students</a>
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white hover:bg-[#695CFE] ease-in-out duration-200 rounded">Students</a>
 
-                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-[rgba(31,115,225,0.8)] rounded ease-in-out duration-200 relative">
+                        <a href="#" class="block p-2 text-sm text-sidebar-menu hover:text-white hover:bg-gray-700 rounded ease-in-out duration-200 relative">
                             <span>Student Requests</span>
                             <!-- Red dot for notification -->
-                                <span class="absolute top-0 right-0 mt-2 mr-2 flex items-center justify-center w-5 h-5 bg-red-600 text-white text-xs rounded-full">
-                                    3
-                                </span>
+                            <span class="absolute top-0 right-0 mt-2 mr-2 flex items-center justify-center w-5 h-5 bg-red-600 text-white text-xs rounded-full">
+                                3
+                            </span>
                         </a>
                     </div>
                 </li>
-
-
-                <!-- old -->
-                <!-- <li class="py-2">
-                    <a href="#" @click="openDropdown === 2 ? openDropdown = null : openDropdown = 2" class="block rounded flex items-center space-x-2 hover:bg-gray-700 p-2 ease-in-out duration-200">
-                        <i class="fa-solid fa-user-gear"></i>
-                        <span>Manage Users</span>
-                        <svg x-bind:class="{ 'rotate-180': openDropdown === 2 }" class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-left:auto">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </a>
-                    <div x-show="openDropdown === 2" class="ml-4 my-4 space-y-2" x-cloak>
-                        
-                        <div class="flex items-center justify-between">
-                            <a href="" class="flex-grow block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-gray-700 rounded-l ease-in-out duration-200">
-                                Trainers
-                            </a>
-                            <a href="" class="p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-gray-700 rounded-r ease-in-out duration-200">
-                                <i class="fa-solid fa-plus"></i>
-                            </a>
-                        </div>
-                        <a href="" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-gray-700 rounded ease-in-out duration-200">Students</a>
-                    
-                        <a href="" class="block p-2 text-sm text-sidebar-menu hover:text-gray-300 hover:bg-gray-700 rounded ease-in-out duration-200 relative">
-                            <span>Student Requests</span>
-                                <span class="absolute top-0 right-0 mt-2 mr-2 flex items-center justify-center w-5 h-5 bg-red-600 text-white text-xs rounded-full">
-                        </a>
-                    </div>
-                </li> -->
             </ul>
         </div>
 
-        
         <div class="bottom-content">
-
             <form method="POST" action="#">
                 @csrf
                 <button type="submit" class="block w-full rounded h-12 p-2 space-x-5 bg-red-400 text-white hover:bg-red-600 text-left">
